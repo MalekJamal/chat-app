@@ -2,7 +2,9 @@ import "./App.css";
 import { io } from "socket.io-client";
 import { useState } from "react";
 import Chat from "./components/Chat";
-const socket = io.connect(`http://localhost:4000`);
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react'
+const socket = io.connect(`${process.env.VITE_SERVER_URL}`);
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
